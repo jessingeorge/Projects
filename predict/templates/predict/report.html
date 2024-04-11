@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+	{% load static %}
+	<head>
+		<link rel="shortcut icon" href="{% static 'predict/images/cardiogram.png' %}" type="image/x-icon">
+		<title>Report</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="{% static 'predict/assets/css/main.css' %}" />
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+				<h1><strong><a href="{% url 'index' %}">Smart healthcare system</a></strong></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="{% url 'index' %}">Home</a></li>
+					</ul>
+				</nav>
+			</header>
+
+			<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="container">
+
+					<h2 class="major special">Report</h2>
+
+					<hr>
+					<h3 class="major special">Personal details</h3>
+
+					<fieldset>
+                    {% for detail in details %}
+                    <h4>{{ detail }}</h4>
+                    {% endfor %}
+					</fieldset>
+					<hr>
+					<h3 class="major special">symptoms</h3>
+
+                    {% for symptom in symptoms %}
+                    <h4>{{ symptom }}</h4>
+                    {% endfor %}
+					<hr>
+					<h3 class="major special">Predicted Disease</h3>
+
+                    {% for output in outputs %}
+                    <h4>{{ output }}</h4>
+                    {% endfor %}
+					{% for output in outputs1 %}
+                    <h4>{{ output }}</h4>
+                    {% endfor %}
+
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				
+		<div class="content">
+	 <center><button class="btn btn-primary" onclick="window.print()">Generate PDF</button></center>
+   		</div>
+
+		<br> <br>
+				<div class="container">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-facebook"></a></li>
+						<li><a href="#" class="icon fa-twitter"></a></li>
+						<li><a href="#" class="icon fa-instagram"></a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="{% static 'predict/assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'predict/assets/js/skel.min.js' %}"></script>
+			<script src="{% static 'predict/assets/js/util.js' %}"></script>
+			<script src="{% static 'predict/assets/js/main.js' %}"></script>
+
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
